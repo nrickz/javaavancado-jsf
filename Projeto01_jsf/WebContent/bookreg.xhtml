@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Holy smokes</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<h:outputText value="Title" />
+		<h:inputText value="#{BookBean.book.title}" />
+		<br />
+
+		<h:outputText value="Author" />
+		<h:inputText value="#{BookBean.book.author}" />
+		<br />
+
+		<h:outputText value="Publishing Date" />
+		<h:inputText value="#{BookBean.book.publishDate}">
+			<f:convertDateTime pattern="dd/MM/yyyy" />
+		</h:inputText>
+		<br />
+
+		<h:outputText value="Price" />
+		<h:inputText value="#{BookBean.book.price}" />
+		<br />
+		
+		<h:commandButton value="Insert" action="#{BookBean.Insert}"></h:commandButton>
+		<h:outputLink value="listBooks.faces"> List books
+		</h:outputLink>
+	</h:form>
+</h:body>
+
+</html>
